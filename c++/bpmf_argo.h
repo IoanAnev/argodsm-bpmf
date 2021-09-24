@@ -140,8 +140,7 @@ bool ARGO_Sys::are_items_adjacent(int l, int r)
 void ARGO_Sys::pop_front(int elems)
 {
     auto beg = queue.begin();
-    auto end = beg;
-    std::advance(end, elems);
+    auto end = std::next(beg, elems);
     queue.erase(beg, end);
 }
 
